@@ -1,0 +1,133 @@
+<?xml version="1.0"?>
+<workflow id="92" url="https://formulaires-e-guichet.braine-lalleud.be/backoffice/workflows/92/">
+  <name>Gestion des formulaires site web</name>
+  <slug>gestion-des-formulaires-site-web</slug>
+  <roles>
+    <role id="_receiver">Agent traitant</role>
+  </roles><possible_status>
+    <status>
+      <id>just_submitted</id>
+      <name>Nouvelle demande</name>
+      <colour>FFFFFF</colour>
+      <visibility>
+        <role>_receiver</role>
+      </visibility><items>
+        <item id="1" type="dispatch">
+          <role_key>_receiver</role_key>
+          <dispatch_type>manual</dispatch_type>
+          <role_id role_id="{{ form_var_service_role }}">{{ form_var_service_role }}</role_id>
+          <operation_mode>set</operation_mode>
+        </item><item id="2" type="sendmail">
+          <to>
+            <item role_id="{{ form_var_service_mail }}">{{ form_var_service_mail }}</item>
+          </to><subject>Nouvelle demande ({{ form_name }})</subject>
+          <body>Bonjour,
+
+Un citoyen a pos&#233; une nouvelle question via le site web. 
+
+Vous pouvez :
+
+- `Consulter la demande via l'e-guichet &lt;{{ form_url_backoffice }}&gt;`_
+
+- Voir le d&#233;tail de la demande ci-dessous :
+
+{{ form_details }}
+
+Cordialement
+</body>
+        </item><item id="3" type="sendmail">
+          <to>
+            <item role_id="{{ form_var_email }}">{{ form_var_email }}</item>
+          </to><subject>Votre demande {{ form_name }}</subject>
+          <body>Bonjour,
+
+Nous vous confirmons la r&#233;ception de votre demande &#224; notre administration communale.
+{% if form_user %}
+Vous pouvez la consulter en suivant ce lien&#160;: {{ form_url }}
+{% endif %}
+
+{% if form_details %}
+Pour r&#233;f&#233;rence, voici le d&#233;tail de la demande&#160;:
+
+{{ form_details }}
+{% endif %}
+</body>
+        </item><item id="4" type="jump">
+          <status>accepted</status>
+          <set_marker_on_status>False</set_marker_on_status>
+        </item>
+      </items>
+    </status><status>
+      <id>accepted</id>
+      <name>En cours de traitement</name>
+      <colour>66CCFF</colour>
+      <visibility />
+      <items>
+        <item id="1" type="jumponsubmit">
+          <status>0</status>
+          <set_marker_on_status>False</set_marker_on_status>
+        </item><item id="3" type="commentable">
+          <label>Commentaire</label>
+          <button_label>Ajouter le commentaire</button_label>
+          <by>
+            <item role_id="_receiver">_receiver</item>
+          </by><varname>reponse</varname>
+          <backoffice_info_text>&lt;p&gt;Zone d&amp;eacute;di&amp;eacute;e &amp;agrave; une r&amp;eacute;ponse &amp;agrave; donner au citoyen.&lt;/p&gt;
+</backoffice_info_text>
+          <required>False</required>
+        </item>
+      </items>
+    </status><status>
+      <id>finished</id>
+      <name>Termin&#233;</name>
+      <colour>CCCCCC</colour>
+      <forced_endpoint>true</forced_endpoint>
+      <visibility />
+      <items>
+        <item id="1" type="register-comment">
+          <comment>{{ form_workflow_form_contact_var_suite }}</comment>
+          <to>
+            <item role_id="_receiver">_receiver</item>
+          </to>
+        </item><item id="2" type="sendmail">
+          <to>
+            <item role_id="_submitter">_submitter</item>
+          </to><mail_template>indus-usager-demande-traitee</mail_template>
+        </item>
+      </items>
+    </status><status>
+      <id>0</id>
+      <name>Trait&#233;</name>
+      <colour>FFFFFF</colour>
+      <visibility />
+      <items>
+        <item id="4" type="form">
+          <by>
+            <item role_id="_receiver">_receiver</item>
+          </by><varname>contact</varname>
+          <formdef>
+            <name>-</name>
+            <fields>
+              <field>
+                <label type="str">Suite donn&#233;e &#224; la demande de contact (uniquement en interne)</label>
+                <type type="str">text</type>
+                <required type="bool">True</required>
+                <hint type="str">Indiquez ici la fa&#231;on dont vous avez pu joindre le citoyen (par mail, par t&#233;l&#233;phone, via l'e-guichet...) et toute autre information utile pour vos coll&#232;gues. Le citoyen ne verra pas le contenu de ce champ.</hint>
+                <varname type="str">suite</varname>
+                <display_locations />
+                <prefill>
+                  <locked>False</locked>
+                  <type>none</type>
+                </prefill><pre type="bool">False</pre>
+                <id type="str">1</id>
+              </field>
+            </fields>
+          </formdef>
+        </item><item id="5" type="jumponsubmit">
+          <status>finished</status>
+          <set_marker_on_status>False</set_marker_on_status>
+        </item>
+      </items>
+    </status>
+  </possible_status>
+</workflow>
