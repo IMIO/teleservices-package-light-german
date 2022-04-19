@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<carddef id="14" url="https://formulaires-e-guichet.braine-lalleud.be/backoffice/cards/14/">
+  <name>Services (signaler un probl&#232;me)</name>
+  <url_name>services-signaler-un-probleme</url_name>
+  <internal_identifier>services-signaler-un-probleme</internal_identifier>
+  <discussion>false</discussion>
+  <detailed_emails>true</detailed_emails>
+  <disabled>false</disabled>
+  <only_allow_one>false</only_allow_one>
+  <enable_tracking_codes>false</enable_tracking_codes>
+  <confirmation>false</confirmation>
+  <always_advertise>false</always_advertise>
+  <include_download_all_button>false</include_download_all_button>
+  <has_captcha>false</has_captcha>
+  <skip_from_360_view>false</skip_from_360_view>
+  <workflow workflow_id="_carddef_default">Par d&#233;faut (fiches)</workflow>
+  <max_field_id>4</max_field_id>
+  <fields>
+    <field>
+      <label type="str">Nom du service</label>
+      <type type="str">string</type>
+      <required type="bool">True</required>
+      <varname type="str">nom</varname>
+      <display_locations>
+        <display_location>validation</display_location>
+        <display_location>summary</display_location>
+        <display_location>listings</display_location>
+      </display_locations><prefill>
+        <type>none</type>
+      </prefill><anonymise type="bool">True</anonymise>
+      <id type="str">1</id>
+    </field><field>
+      <label type="str">Adresse &#233;lectronique</label>
+      <type type="str">email</type>
+      <required type="bool">True</required>
+      <varname type="str">mail</varname>
+      <display_locations>
+        <display_location>validation</display_location>
+        <display_location>summary</display_location>
+        <display_location>listings</display_location>
+      </display_locations><prefill>
+        <type>none</type>
+      </prefill><id type="str">3</id>
+    </field><field>
+      <label type="str">S&#233;lectionnez le r&#244;le d'agent traitant</label>
+      <type type="str">item</type>
+      <required type="bool">True</required>
+      <varname type="str">role</varname>
+      <display_locations>
+        <display_location>validation</display_location>
+        <display_location>summary</display_location>
+        <display_location>listings</display_location>
+      </display_locations><prefill>
+        <type>none</type>
+      </prefill><items />
+      <display_mode type="str">list</display_mode>
+      <data_source>
+        <type>roles</type>
+        <value>{{ idp_url }}api/roles</value>
+      </data_source><in_filters type="bool">False</in_filters>
+      <anonymise type="bool">False</anonymise>
+      <display_disabled_items type="bool">False</display_disabled_items>
+      <id type="str">4</id>
+    </field>
+  </fields><user-roles>
+    <role role_id="e22806cf30a64a308d9c00d1c3efacae" slug="agent-ayant-acces-aux-fabriques">Agent ayant acces aux fabriques</role>
+    <role role_id="93f6c58e6cdf4036b1bc8a9a9efa9baf" slug="debug">Debug</role>
+  </user-roles><backoffice-submission-roles>
+    <role role_id="e22806cf30a64a308d9c00d1c3efacae" slug="agent-ayant-acces-aux-fabriques">Agent ayant acces aux fabriques</role>
+    <role role_id="93f6c58e6cdf4036b1bc8a9a9efa9baf" slug="debug">Debug</role>
+  </backoffice-submission-roles><roles>
+    <role role_id="e22806cf30a64a308d9c00d1c3efacae" role_key="_viewer" slug="agent-ayant-acces-aux-fabriques">Agent ayant acces aux fabriques</role>
+    <role role_id="e22806cf30a64a308d9c00d1c3efacae" role_key="_editor" slug="agent-ayant-acces-aux-fabriques">Agent ayant acces aux fabriques</role>
+  </roles><options />
+  <custom_views />
+  <geolocations />
+  <digest_templates>
+    <template key="default">{{ form_var_nom }}</template>
+  </digest_templates>
+</carddef>
