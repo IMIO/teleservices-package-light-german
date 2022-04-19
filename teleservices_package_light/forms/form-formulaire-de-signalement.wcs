@@ -1,0 +1,131 @@
+<?xml version="1.0"?>
+<formdef id="172" url="https://formulaires-e-guichet.braine-lalleud.be/backoffice/forms/172/">
+  <name>Signaler une erreur sur le site</name>
+  <url_name>formulaire-de-signalement</url_name>
+  <internal_identifier>signaler-une-erreur-sur-le-site</internal_identifier>
+  <drafts_lifespan>2</drafts_lifespan>
+  <discussion>false</discussion>
+  <detailed_emails>true</detailed_emails>
+  <disabled>false</disabled>
+  <only_allow_one>false</only_allow_one>
+  <enable_tracking_codes>true</enable_tracking_codes>
+  <confirmation>true</confirmation>
+  <always_advertise>false</always_advertise>
+  <include_download_all_button>false</include_download_all_button>
+  <has_captcha>false</has_captcha>
+  <skip_from_360_view>false</skip_from_360_view>
+  <workflow slug="signaler-un-probleme-sur-le-site" workflow_id="93">Signaler un probl&#232;me sur le site</workflow>
+  <max_field_id>15</max_field_id>
+  <fields>
+    <field>
+      <label type="str">Faire une remarque sur le site web de Braine-l'Alleud</label>
+      <type type="str">title</type>
+      <display_locations>
+        <display_location>validation</display_location>
+        <display_location>summary</display_location>
+      </display_locations><id type="str">10</id>
+    </field><field>
+      <label type="str">Vos coordonn&#233;es</label>
+      <type type="str">subtitle</type>
+      <display_locations>
+        <display_location>validation</display_location>
+        <display_location>summary</display_location>
+      </display_locations><id type="str">11</id>
+    </field><field>
+      <label type="str">&lt;p&gt;Vos coordonn&#233;es ne sont demand&#233;es que pour effectuer l'&#233;ventuel suivi de votre demande.&lt;/p&gt;</label>
+      <type type="str">comment</type>
+      <display_locations />
+      <id type="str">12</id>
+    </field><field>
+      <label type="str">Adresse e-mail</label>
+      <type type="str">email</type>
+      <required type="bool">True</required>
+      <varname type="str">email</varname>
+      <display_locations>
+        <display_location>validation</display_location>
+        <display_location>summary</display_location>
+      </display_locations><extra_css_class type="str">grid-1-2</extra_css_class>
+      <prefill>
+        <type>user</type>
+        <value>_email</value>
+      </prefill><id type="str">6</id>
+    </field><field>
+      <label type="str">T&#233;l&#233;phone</label>
+      <type type="str">string</type>
+      <required type="bool">False</required>
+      <display_locations>
+        <display_location>validation</display_location>
+        <display_location>summary</display_location>
+      </display_locations><extra_css_class type="str">grid-1-2</extra_css_class>
+      <prefill>
+        <type>none</type>
+      </prefill><anonymise type="bool">True</anonymise>
+      <id type="str">15</id>
+    </field><field>
+      <label type="str">Probl&#232;me rencontr&#233;</label>
+      <type type="str">subtitle</type>
+      <display_locations>
+        <display_location>validation</display_location>
+        <display_location>summary</display_location>
+      </display_locations><id type="str">13</id>
+    </field><field>
+      <label type="str">Votre signalement concerne :</label>
+      <type type="str">item</type>
+      <required type="bool">True</required>
+      <hint type="str">-- S&#233;lectionnez un &#233;l&#233;ment --</hint>
+      <varname type="str">type</varname>
+      <display_locations>
+        <display_location>validation</display_location>
+        <display_location>summary</display_location>
+      </display_locations><extra_css_class type="str">grid-1-2</extra_css_class>
+      <prefill>
+        <type>none</type>
+      </prefill><items>
+        <item>Un probl&#232;me d'accessibilit&#233;</item>
+        <item>Un non-respect du RGPD</item>
+        <item>Une information erron&#233;e sur l'une des pages du site web communal</item>
+      </items><display_mode type="str">list</display_mode>
+      <data_source>
+        <type>carddef:services-signaler-un-probleme</type>
+      </data_source><in_filters type="bool">False</in_filters>
+      <anonymise type="bool">False</anonymise>
+      <display_disabled_items type="bool">False</display_disabled_items>
+      <id type="str">7</id>
+    </field><field>
+      <label type="str">Indiquez l'URL concern&#233;e</label>
+      <type type="str">block:url_concernee_1</type>
+      <condition>
+        <type>django</type>
+        <value>form_var_type == "Une information erron&#233;e sur une des pages du site communal"</value>
+      </condition><required type="bool">True</required>
+      <display_locations>
+        <display_location>validation</display_location>
+        <display_location>summary</display_location>
+      </display_locations><extra_css_class type="str">grid-1-1</extra_css_class>
+      <max_items type="int">5</max_items>
+      <add_element_label type="str">Ajouter une autre adresse</add_element_label>
+      <label_display type="str">hidden</label_display>
+      <remove_button type="bool">True</remove_button>
+      <id type="str">8</id>
+    </field><field>
+      <label type="str">Indiquez l'URL concern&#233;e 2</label>
+      <type type="str">block:url_concernee_2</type>
+      <condition>
+        <type>django</type>
+        <value>form_var_type == 'Un non-respect du RGPD' or form_var_type == 'Un probl&#232;me d\'accessibilit&#233;'</value>
+      </condition><required type="bool">True</required>
+      <display_locations>
+        <display_location>validation</display_location>
+        <display_location>summary</display_location>
+      </display_locations><max_items type="int">5</max_items>
+      <add_element_label type="str">Ajouter une autre adresse</add_element_label>
+      <label_display type="str">hidden</label_display>
+      <remove_button type="bool">True</remove_button>
+      <id type="str">14</id>
+    </field>
+  </fields><roles>
+    <role role_id="6bfcf2c5fc2241ff949e5f027558ac29" role_key="_receiver" slug="agents-traitants-relations-publiques">Agents traitants - Relations publiques</role>
+  </roles><options />
+  <custom_views />
+  <geolocations />
+</formdef>

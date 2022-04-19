@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<formdef id="173" url="https://formulaires-e-guichet.braine-lalleud.be/backoffice/forms/173/">
+  <name>Formulaire de contact</name>
+  <url_name>formulaire-de-contact</url_name>
+  <internal_identifier>formulaire-de-contact</internal_identifier>
+  <drafts_lifespan>2</drafts_lifespan>
+  <discussion>false</discussion>
+  <detailed_emails>true</detailed_emails>
+  <disabled>false</disabled>
+  <only_allow_one>false</only_allow_one>
+  <enable_tracking_codes>true</enable_tracking_codes>
+  <confirmation>true</confirmation>
+  <always_advertise>false</always_advertise>
+  <include_download_all_button>false</include_download_all_button>
+  <has_captcha>false</has_captcha>
+  <skip_from_360_view>false</skip_from_360_view>
+  <workflow slug="gestion-des-formulaires-site-web" workflow_id="92">Gestion des formulaires site web</workflow>
+  <max_field_id>7</max_field_id>
+  <fields>
+    <field>
+      <label type="str">Votre adresse &#233;lectronique</label>
+      <type type="str">email</type>
+      <required type="bool">True</required>
+      <varname type="str">email</varname>
+      <display_locations>
+        <display_location>validation</display_location>
+        <display_location>summary</display_location>
+        <display_location>listings</display_location>
+      </display_locations><extra_css_class type="str">grid-1-2</extra_css_class>
+      <prefill>
+        <type>user</type>
+        <value>_email</value>
+      </prefill><id type="str">4</id>
+    </field><field>
+      <label type="str">T&#233;l&#233;phone</label>
+      <type type="str">string</type>
+      <required type="bool">False</required>
+      <display_locations>
+        <display_location>validation</display_location>
+        <display_location>summary</display_location>
+      </display_locations><extra_css_class type="str">grid-1-2</extra_css_class>
+      <prefill>
+        <type>none</type>
+      </prefill><anonymise type="bool">True</anonymise>
+      <id type="str">6</id>
+    </field><field>
+      <label type="str">Service &#224; contacter</label>
+      <type type="str">item</type>
+      <required type="bool">True</required>
+      <hint type="str">-- S&#233;lectionnez un service dans la liste -- </hint>
+      <varname type="str">service</varname>
+      <display_locations>
+        <display_location>validation</display_location>
+        <display_location>summary</display_location>
+        <display_location>listings</display_location>
+      </display_locations><extra_css_class type="str">newline grid-1-2</extra_css_class>
+      <prefill>
+        <locked>False</locked>
+        <type>none</type>
+      </prefill><display_mode type="str">list</display_mode>
+      <data_source>
+        <type>carddef:services-formulaire-de-contact:ordre-alphabetique</type>
+      </data_source><in_filters type="bool">False</in_filters>
+      <anonymise type="bool">False</anonymise>
+      <display_disabled_items type="bool">False</display_disabled_items>
+      <id type="str">1</id>
+    </field><field>
+      <label type="str">&lt;p&gt;Aucune d&amp;eacute;marche susceptible d&amp;#39;&amp;ecirc;tre r&amp;eacute;alis&amp;eacute;e directement depuis notre &lt;a href="https://e-guichet.braine-lalleud.be/demarches/"&gt;e-guichet &lt;/a&gt;ne sera trait&amp;eacute;e &amp;agrave; partir de ce formulaire de contact. Merci de n&amp;#39;utiliser ce formulaire que pour vos questions et remarques.&lt;/p&gt;
+</label>
+      <type type="str">comment</type>
+      <condition>
+        <type>django</type>
+        <value>form_var_service  == "Citoyennet&#233;"</value>
+      </condition><display_locations />
+      <id type="str">7</id>
+    </field><field>
+      <label type="str">Votre question</label>
+      <type type="str">text</type>
+      <required type="bool">True</required>
+      <varname type="str">question</varname>
+      <display_locations>
+        <display_location>validation</display_location>
+        <display_location>summary</display_location>
+        <display_location>listings</display_location>
+      </display_locations><extra_css_class type="str">newline grid-1-2</extra_css_class>
+      <prefill>
+        <type>none</type>
+      </prefill><rows type="str">5</rows>
+      <pre type="bool">False</pre>
+      <id type="str">2</id>
+    </field><field>
+      <label type="str">Ajoutez un fichier si vous le souhaitez</label>
+      <type type="str">file</type>
+      <required type="bool">False</required>
+      <varname type="str">fichier</varname>
+      <display_locations>
+        <display_location>validation</display_location>
+        <display_location>summary</display_location>
+        <display_location>listings</display_location>
+      </display_locations><prefill>
+        <type>none</type>
+      </prefill><allow_portfolio_picking type="bool">False</allow_portfolio_picking>
+      <automatic_image_resize type="bool">False</automatic_image_resize>
+      <storage type="str">default</storage>
+      <id type="str">5</id>
+    </field>
+  </fields><options />
+  <custom_views />
+  <geolocations />
+</formdef>
