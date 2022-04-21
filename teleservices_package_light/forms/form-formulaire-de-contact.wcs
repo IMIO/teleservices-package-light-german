@@ -47,7 +47,7 @@
       <label type="str">Service &#224; contacter</label>
       <type type="str">item</type>
       <required type="bool">True</required>
-      <hint type="str">-- S&#233;lectionnez un service dans la liste -- </hint>
+      <hint type="str">S&#233;lectionnez un service dans la liste</hint>
       <varname type="str">service</varname>
       <display_locations>
         <display_location>validation</display_location>

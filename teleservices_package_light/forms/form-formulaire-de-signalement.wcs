@@ -72,7 +72,7 @@
       <label type="str">Votre signalement concerne :</label>
       <type type="str">item</type>
       <required type="bool">True</required>
-      <hint type="str">-- S&#233;lectionnez un &#233;l&#233;ment --</hint>
+      <hint type="str">S&#233;lectionnez un &#233;l&#233;ment</hint>
       <varname type="str">type</varname>
       <display_locations>
         <display_location>validation</display_location>
