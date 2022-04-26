@@ -18,7 +18,7 @@
   <max_field_id>15</max_field_id>
   <fields>
     <field>
-      <label type="str">Faire une remarque sur le site web de Braine-l'Alleud</label>
+      <label type="str">Faire une remarque sur le site web</label>
       <type type="str">title</type>
       <display_locations>
         <display_location>validation</display_location>
