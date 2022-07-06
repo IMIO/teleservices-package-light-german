@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<workflow id="287" url="https://staging2-formulaires.guichet-citoyen.be/backoffice/workflows/287/">
+<workflow id="1" url="https://wavrecpas-formulaires.guichet-citoyen.be/backoffice/workflows/1/">
   <name>Gestion des formulaires site web</name>
   <slug>gestion-des-formulaires-site-web</slug>
   <roles>
@@ -190,7 +190,7 @@ b250ZW50LnhtbFBLAQIUABQACAgIAKQqc1Ah7C3TLQEAACUEAAAVAAAAAAAAAAAAAAAAADUfAABN
 RVRBLUlORi9tYW5pZmVzdC54bWxQSwUGAAAAABEAEQBlBAAApSAAAAAA
 </b64_content>
           </model_file><convert_to_pdf>True</convert_to_pdf>
-          <backoffice_filefield_id>boc2b8f237-7c97-4ef8-9039-f1631ae2d86e</backoffice_filefield_id>
+          <backoffice_filefield_id>bof78850cf-235e-418c-9c70-dea693df9488</backoffice_filefield_id>
           <attach_to_history>False</attach_to_history>
           <varname>formulaire</varname>
           <push_to_portfolio>False</push_to_portfolio>
@@ -217,7 +217,6 @@ Vous pouvez :
 Cordialement
 </body>
           <attachments>
-            <attachment>form_fboc2b8f237_7c97_4ef8_9039_f1631ae2d86e</attachment>
             <attachment>{{ form_var_fichier }}</attachment>
           </attachments>
         </item><item id="3" type="sendmail">
@@ -226,7 +225,7 @@ Cordialement
           </to><subject>Votre demande {{ form_name }}</subject>
           <body>Bonjour,
 
-Nous vous confirmons la r&#233;ception de votre demande &#224; notre administration communale.
+Nous vous confirmons la r&#233;ception de votre demande.
 {% if form_user %}
 Vous pouvez la consulter en suivant ce lien&#160;: {{ form_url }}
 {% endif %}
@@ -327,7 +326,7 @@ Pour r&#233;f&#233;rence, voici le d&#233;tail de la demande&#160;:
           </display_locations><allow_portfolio_picking type="bool">False</allow_portfolio_picking>
           <automatic_image_resize type="bool">False</automatic_image_resize>
           <storage type="str">default</storage>
-          <id type="str">boc2b8f237-7c97-4ef8-9039-f1631ae2d86e</id>
+          <id type="str">bof78850cf-235e-418c-9c70-dea693df9488</id>
         </field>
       </fields>
     </formdef>
