@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<workflow id="92" url="https://formulaires-e-guichet.braine-lalleud.be/backoffice/workflows/92/">
+<workflow id="287" url="https://staging2-formulaires.guichet-citoyen.be/backoffice/workflows/287/">
   <name>Gestion des formulaires site web</name>
   <slug>gestion-des-formulaires-site-web</slug>
   <roles>
@@ -17,6 +17,187 @@
           <dispatch_type>manual</dispatch_type>
           <role_id role_id="{{ form_var_service_role }}">{{ form_var_service_role }}</role_id>
           <operation_mode>set</operation_mode>
+        </item><item id="5" type="export_to_model">
+          <model_file>
+            <base_filename>template-form-details.odt</base_filename>
+            <content_type>application/vnd.oasis.opendocument.text</content_type>
+            <b64_content>UEsDBBQAAAgAAKQqc1BexjIMJwAAACcAAAAIAAAAbWltZXR5cGVhcHBsaWNhdGlvbi92bmQub2Fz
+aXMub3BlbmRvY3VtZW50LnRleHRQSwMEFAAACAAApCpzUAAAAAAAAAAAAAAAABgAAABDb25maWd1
+cmF0aW9uczIvdG9vbGJhci9QSwMEFAAACAAApCpzUAAAAAAAAAAAAAAAABgAAABDb25maWd1cmF0
+aW9uczIvZmxvYXRlci9QSwMEFAAACAAApCpzUAAAAAAAAAAAAAAAABgAAABDb25maWd1cmF0aW9u
+czIvbWVudWJhci9QSwMEFAAACAAApCpzUAAAAAAAAAAAAAAAABoAAABDb25maWd1cmF0aW9uczIv
+cG9wdXBtZW51L1BLAwQUAAAIAACkKnNQAAAAAAAAAAAAAAAAHAAAAENvbmZpZ3VyYXRpb25zMi9h
+Y2NlbGVyYXRvci9QSwMEFAAACAAApCpzUAAAAAAAAAAAAAAAABoAAABDb25maWd1cmF0aW9uczIv
+dG9vbHBhbmVsL1BLAwQUAAAIAACkKnNQAAAAAAAAAAAAAAAAHAAAAENvbmZpZ3VyYXRpb25zMi9w
+cm9ncmVzc2Jhci9QSwMEFAAACAAApCpzUAAAAAAAAAAAAAAAABoAAABDb25maWd1cmF0aW9uczIv
+c3RhdHVzYmFyL1BLAwQUAAAIAACkKnNQAAAAAAAAAAAAAAAAHwAAAENvbmZpZ3VyYXRpb25zMi9p
+bWFnZXMvQml0bWFwcy9QSwMEFAAICAgApCpzUAAAAAAAAAAAAAAAAAwAAABtYW5pZmVzdC5yZGbN
+k81ugzAQhO88hWXO2EAvBQVyKMq5ap/ANYZYBS/ymhLevo6TVlGkquqf1OOuRjPfjrSb7WEcyIuy
+qMFUNGMpJcpIaLXpKzq7Lrml2zra2LYrH5od8WqDpZ8qunduKjlfloUtNwxsz7OiKHia8zxPvCLB
+1ThxSAzGtI4ICR6NQmn15HwaOc7iCWZXUXTroJB59yA9i906qaCyCmG2Ur2HtiCRgUCNCUzKhHSD
+HLpOS8UzlvNROcGh7eLHYL3Tg6I8YPArjs/Y3ogMpuVe4L2w7lyD33yVaHruY3p108Xx3yOUYJwy
+7k/quzt5/+f+Ls//GeKvtHZEbEDOo2f6kOe08h9VR69QSwcItPdo0gUBAACDAwAAUEsDBBQACAgI
+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
+fCXvWhT7InDMxO3qnNkyB29TMFD+KdwaOF/NWnyq6Y//hcj4nVM5232xU5x3Wp3y0RpS+bez23Wp
+CRMmCktatT6d0O5nSetLMh5ZzoOqO/1IDYnNvpGi+kxuaQnmJ7AJTAJ3QJC3cBQVLzM33ZU9rv2d
+q9iDVE/HEt2pJML2Mp3M99aVPqF59YbDQKGhjKJk+gZvDuP+sJLf4j2avzNt+GRpt6EfuZndMZkx
+4WsW+cuJ2nDU86XCjeM9Od+ZbQgajA3lwBilKazJ93b+5YeEuoagP5mQTi9tgQtnO3IJZJxDAe3I
+hkSbiSgTvrqEHrJ4SLwapShzsLyTo9ostVNDe0RGeKr70kaFHy99B2V4xIRnbz3IBXkngh+gkLqT
+3zQmlbrFHhvDC/fxUx0EDHH+DcAH27HtwxBxc+WuhTg7vvh4eVkBYr5y6iKkrdZ+jsMszFsS5UH6
+zwNpi2B2jvu7E+SKo4Dv+UuYfdkWqH1k3x0zsxaVP1siXRPzXsBW4IKW+xGi6AFQAkpDUHJ+7oUL
+CkFawJUxOz30c5q8GuLbt3s8zGjk2JIId6iy5kVeToeomzQ+W/DQLAXoe7yFCctEmWwvfIOp/uZ1
+5HrRi9o3/wFQSwcIpYDMfrkGAADqLQAAUEsDBBQAAAgAAKQqc1AiActR/AMAAPwDAAAYAAAAVGh1
+bWJuYWlscy90aHVtYm5haWwucG5niVBORw0KGgoAAAANSUhEUgAAALUAAAEACAMAAADC/cfpAAAB
+IFBMVEUpKZQxMZg4OJxERKFKSqRQUKdSUqhbW61Qf6xgYK9jY7Bra7VwcLdzc7h9fb5Yha9jjbVx
+l7t3nL56nb9MqN5XruBesOF6nsB9oMFhsuJqt+NuuOR2vOV+wOd/weiPj4+ampqkpKSsrKyzs7O7
+u7uDg8GKisSWlsqbm82DpMSLqsiWs82atc+fudGnp9OsrNWkvdS0tNm7u9yFxOiKxumOyOqUy+ub
+zuyuxNmxxdm7zt6k0u2u2O+/0OCx2fC53fK/4PPDw8PMzMzBwd/T09Pa2trNzebJ1+XM2ebW1urQ
+3enb2+3E4vPM5vXV6vbb7ffa7fjk5OTg4O/s7Ozk5PHg6PDq6/Tk8fnu8/fo9Pvz8/Pz8/nz+fz+
+/v4AAAD///+mWwLnAAACl0lEQVR42u3VXU/bMBSA4YpGYYrVsgFDiI+tpGlp91VauoBapCyZQ9Fo
+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
+</b64_content>
+          </model_file><convert_to_pdf>True</convert_to_pdf>
+          <backoffice_filefield_id>boc2b8f237-7c97-4ef8-9039-f1631ae2d86e</backoffice_filefield_id>
+          <attach_to_history>False</attach_to_history>
+          <varname>formulaire</varname>
+          <push_to_portfolio>False</push_to_portfolio>
+          <method>non-interactive</method>
+          <by>
+            <item role_id="_receiver">_receiver</item>
+          </by><filename>formulaire</filename>
         </item><item id="2" type="sendmail">
           <to>
             <item role_id="{{ form_var_service_mail }}">{{ form_var_service_mail }}</item>
@@ -35,6 +216,10 @@ Vous pouvez :
 
 Cordialement
 </body>
+          <attachments>
+            <attachment>form_fboc2b8f237_7c97_4ef8_9039_f1631ae2d86e</attachment>
+            <attachment>{{ form_var_fichier }}</attachment>
+          </attachments>
         </item><item id="3" type="sendmail">
           <to>
             <item role_id="{{ form_var_email }}">{{ form_var_email }}</item>
@@ -66,7 +251,7 @@ Pour r&#233;f&#233;rence, voici le d&#233;tail de la demande&#160;:
         <item id="1" type="jumponsubmit">
           <status>0</status>
           <set_marker_on_status>False</set_marker_on_status>
-        </item><item id="3" type="commentable">
+        </item><item id="2" type="commentable">
           <label>Commentaire</label>
           <button_label>Ajouter le commentaire</button_label>
           <by>
@@ -101,7 +286,7 @@ Pour r&#233;f&#233;rence, voici le d&#233;tail de la demande&#160;:
       <colour>FFFFFF</colour>
       <visibility />
       <items>
-        <item id="4" type="form">
+        <item id="1" type="form">
           <by>
             <item role_id="_receiver">_receiver</item>
           </by><varname>contact</varname>
@@ -116,18 +301,35 @@ Pour r&#233;f&#233;rence, voici le d&#233;tail de la demande&#160;:
                 <varname type="str">suite</varname>
                 <display_locations />
                 <prefill>
-                  <locked>False</locked>
                   <type>none</type>
                 </prefill><pre type="bool">False</pre>
                 <id type="str">1</id>
               </field>
             </fields>
           </formdef>
-        </item><item id="5" type="jumponsubmit">
+        </item><item id="2" type="jumponsubmit">
           <status>finished</status>
           <set_marker_on_status>False</set_marker_on_status>
         </item>
       </items>
     </status>
-  </possible_status>
+  </possible_status><backoffice-fields>
+    <formdef>
+      <name>-</name>
+      <fields>
+        <field>
+          <label type="str">formulaire</label>
+          <type type="str">file</type>
+          <required type="bool">True</required>
+          <display_locations>
+            <display_location>validation</display_location>
+            <display_location>summary</display_location>
+          </display_locations><allow_portfolio_picking type="bool">False</allow_portfolio_picking>
+          <automatic_image_resize type="bool">False</automatic_image_resize>
+          <storage type="str">default</storage>
+          <id type="str">boc2b8f237-7c97-4ef8-9039-f1631ae2d86e</id>
+        </field>
+      </fields>
+    </formdef>
+  </backoffice-fields>
 </workflow>
