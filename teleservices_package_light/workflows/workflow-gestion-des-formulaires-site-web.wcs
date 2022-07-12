@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<workflow id="1" url="https://wavrecpas-formulaires.guichet-citoyen.be/backoffice/workflows/1/">
+<workflow id="32" url="">
   <name>Gestion des formulaires site web</name>
   <slug>gestion-des-formulaires-site-web</slug>
   <roles>
@@ -17,7 +17,7 @@
           <dispatch_type>manual</dispatch_type>
           <role_id role_id="{{ form_var_service_role }}">{{ form_var_service_role }}</role_id>
           <operation_mode>set</operation_mode>
-        </item><item id="5" type="export_to_model">
+        </item><item id="2" type="export_to_model">
           <model_file>
             <base_filename>template-form-details.odt</base_filename>
             <content_type>application/vnd.oasis.opendocument.text</content_type>
@@ -198,13 +198,13 @@ RVRBLUlORi9tYW5pZmVzdC54bWxQSwUGAAAAABEAEQBlBAAApSAAAAAA
           <by>
             <item role_id="_receiver">_receiver</item>
           </by><filename>formulaire</filename>
-        </item><item id="2" type="sendmail">
+        </item><item id="3" type="sendmail">
           <to>
             <item role_id="{{ form_var_service_mail }}">{{ form_var_service_mail }}</item>
           </to><subject>Nouvelle demande ({{ form_name }})</subject>
           <body>Bonjour,
 
-Un citoyen a pos&#233; une nouvelle question via le site web. 
+Un citoyen a pos&#233; une nouvelle question via le site web.
 
 Vous pouvez :
 
@@ -218,8 +218,13 @@ Cordialement
 </body>
           <attachments>
             <attachment>{{ form_var_fichier }}</attachment>
+            <attachment>{{ form_var_fichiers_0_fichier }}</attachment>
+            <attachment>{{ form_var_fichiers_1_fichier }}</attachment>
+            <attachment>{{ form_var_fichiers_2_fichier }}</attachment>
+            <attachment>{{ form_var_fichiers_3_fichier }}</attachment>
+            <attachment>{{ form_var_fichiers_4_fichier }}</attachment>
           </attachments>
-        </item><item id="3" type="sendmail">
+        </item><item id="4" type="sendmail">
           <to>
             <item role_id="{{ form_var_email }}">{{ form_var_email }}</item>
           </to><subject>Votre demande {{ form_name }}</subject>
@@ -236,7 +241,7 @@ Pour r&#233;f&#233;rence, voici le d&#233;tail de la demande&#160;:
 {{ form_details }}
 {% endif %}
 </body>
-        </item><item id="4" type="jump">
+        </item><item id="5" type="jump">
           <status>accepted</status>
           <set_marker_on_status>False</set_marker_on_status>
         </item>

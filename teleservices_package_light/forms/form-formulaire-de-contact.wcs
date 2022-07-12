@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<formdef id="173" url="https://formulaires-e-guichet.braine-lalleud.be/backoffice/forms/173/">
+<formdef id="56" url="">
   <name>Formulaire de contact</name>
   <url_name>formulaire-de-contact</url_name>
   <internal_identifier>formulaire-de-contact</internal_identifier>
@@ -14,8 +14,8 @@
   <include_download_all_button>false</include_download_all_button>
   <has_captcha>false</has_captcha>
   <skip_from_360_view>false</skip_from_360_view>
-  <workflow slug="gestion-des-formulaires-site-web" workflow_id="92">Gestion des formulaires site web</workflow>
-  <max_field_id>7</max_field_id>
+  <workflow slug="gestion-des-formulaires-site-web" workflow_id="31">Gestion des formulaires site web</workflow>
+  <max_field_id>8</max_field_id>
   <fields>
     <field>
       <label type="str">Votre adresse &#233;lectronique</label>
@@ -55,9 +55,9 @@
         <display_location>listings</display_location>
       </display_locations><extra_css_class type="str">newline grid-1-2</extra_css_class>
       <prefill>
-        <locked>False</locked>
         <type>none</type>
       </prefill><display_mode type="str">list</display_mode>
+      <items />
       <data_source>
         <type>carddef:services-formulaire-de-contact:ordre-alphabetique</type>
       </data_source><in_filters type="bool">False</in_filters>
@@ -91,18 +91,33 @@
     </field><field>
       <label type="str">Ajoutez un fichier si vous le souhaitez</label>
       <type type="str">file</type>
-      <required type="bool">False</required>
+      <condition>
+        <type>django</type>
+        <value>false</value>
+      </condition><required type="bool">False</required>
       <varname type="str">fichier</varname>
       <display_locations>
         <display_location>validation</display_location>
         <display_location>summary</display_location>
         <display_location>listings</display_location>
-      </display_locations><prefill>
-        <type>none</type>
-      </prefill><allow_portfolio_picking type="bool">False</allow_portfolio_picking>
+      </display_locations><allow_portfolio_picking type="bool">False</allow_portfolio_picking>
       <automatic_image_resize type="bool">False</automatic_image_resize>
       <storage type="str">default</storage>
       <id type="str">5</id>
+    </field><field>
+      <label type="str">Ajouter des fichiers si vous le souhaitez</label>
+      <type type="str">block:ajouter_un_fichier</type>
+      <required type="bool">False</required>
+      <varname type="str">fichiers</varname>
+      <display_locations>
+        <display_location>validation</display_location>
+        <display_location>summary</display_location>
+        <display_location>listings</display_location>
+      </display_locations><max_items type="int">5</max_items>
+      <add_element_label type="str">Ajouter un autre fichier</add_element_label>
+      <label_display type="str">normal</label_display>
+      <remove_button type="bool">True</remove_button>
+      <id type="str">8</id>
     </field>
   </fields><options />
   <custom_views />
