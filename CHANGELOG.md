@@ -7,3 +7,6 @@ teleservices-package changelog
 ## [0.0.2] - 21-04-2022 -
 ### Updated
   - [TELE-1134] update changelog, include .wcs file via MANIFEST.in [dmuyshond]
+
+### Added
+  - 'pays' datasources which is a dependency of this package [dmshd]
