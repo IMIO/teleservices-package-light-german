@@ -3,8 +3,7 @@
 
 import os
 
-from setuptools import find_packages
-from setuptools import setup
+from setuptools import find_packages, setup
 from setuptools.command.install import install
 
 
@@ -18,7 +17,7 @@ class inst(install):
         os.system("sh " + path + "install_teleservices_package_light.sh")
 
 
-version = "0.0.2"
+version = "0.0.3"
 
 setup(
     name="teleservices-package-light",
