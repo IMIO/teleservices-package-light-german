@@ -1,0 +1,71 @@
+{
+    "roles": [
+        {
+            "slug": "debug",
+            "name": "Debug",
+            "emails_to_members": true,
+            "ou": {
+                "slug": "default"
+            },
+            "parents": [
+                {
+                    "ou": {
+                        "slug": "default"
+                    },
+                    "name": "Agent",
+                    "slug": "agent"
+                }
+            ]
+        },
+        {
+            "slug": "agent-ayant-acces-aux-fabriques",
+            "name": "Agent ayant acces aux fabriques",
+            "emails_to_members": true,
+            "ou": {
+                "slug": "default"
+            },
+            "parents": [
+                {
+                    "ou": {
+                        "slug": "default"
+                    },
+                    "name": "Agent",
+                    "slug": "agent"
+                }
+            ]
+        },
+        {
+            "slug": "agent",
+            "name": "Agent",
+            "emails_to_members": true,
+            "ou": {
+                "slug": "default"
+            }
+        },
+        {
+            "slug": "citoyen-test",
+            "name": "Citoyen (test)",
+            "emails_to_members": true,
+            "ou": {
+                "slug": "default"
+            }
+        },
+        {
+            "slug": "administrateur-fonctionnel",
+            "name": "Administrateur fonctionnel",
+            "emails_to_members": true,
+            "ou": {
+                "slug": "default"
+            },
+            "parents": [
+                {
+                    "ou": {
+                        "slug": "default"
+                    },
+                    "name": "Agent",
+                    "slug": "agent"
+                }
+            ]
+        }
+    ]
+}
