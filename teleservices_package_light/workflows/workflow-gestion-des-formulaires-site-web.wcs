@@ -12,12 +12,12 @@
       <visibility>
         <role>_receiver</role>
       </visibility><items>
-        <item id="1" type="dispatch">
+        <item type="dispatch" id="1">
           <role_key>_receiver</role_key>
           <dispatch_type>manual</dispatch_type>
           <role_id role_id="{{ form_var_service_role }}">{{ form_var_service_role }}</role_id>
           <operation_mode>set</operation_mode>
-        </item><item id="2" type="export_to_model">
+        </item><item type="export_to_model" id="2">
           <model_file>
             <base_filename>template-form-details.odt</base_filename>
             <content_type>application/vnd.oasis.opendocument.text</content_type>
@@ -198,7 +198,7 @@ RVRBLUlORi9tYW5pZmVzdC54bWxQSwUGAAAAABEAEQBlBAAApSAAAAAA
           <by>
             <item role_id="_receiver">_receiver</item>
           </by><filename>formulaire</filename>
-        </item><item id="3" type="sendmail">
+        </item><item type="sendmail" id="3">
           <to>
             <item role_id="{{ form_var_service_mail }}">{{ form_var_service_mail }}</item>
           </to><subject>Nouvelle demande ({{ form_name }})</subject>
@@ -224,7 +224,7 @@ Cordialement
             <attachment>{{ form_var_fichiers_3_fichier }}</attachment>
             <attachment>{{ form_var_fichiers_4_fichier }}</attachment>
           </attachments>
-        </item><item id="4" type="sendmail">
+        </item><item type="sendmail" id="4">
           <to>
             <item role_id="{{ form_var_email }}">{{ form_var_email }}</item>
           </to><subject>Votre demande {{ form_name }}</subject>
@@ -241,7 +241,7 @@ Pour r&#233;f&#233;rence, voici le d&#233;tail de la demande&#160;:
 {{ form_details }}
 {% endif %}
 </body>
-        </item><item id="5" type="jump">
+        </item><item type="jump" id="5">
           <status>accepted</status>
           <set_marker_on_status>False</set_marker_on_status>
         </item>
@@ -252,10 +252,10 @@ Pour r&#233;f&#233;rence, voici le d&#233;tail de la demande&#160;:
       <colour>66CCFF</colour>
       <visibility />
       <items>
-        <item id="1" type="jumponsubmit">
+        <item type="jumponsubmit" id="1">
           <status>0</status>
           <set_marker_on_status>False</set_marker_on_status>
-        </item><item id="2" type="commentable">
+        </item><item type="commentable" id="2">
           <label>Commentaire</label>
           <button_label>Ajouter le commentaire</button_label>
           <by>
@@ -273,12 +273,12 @@ Pour r&#233;f&#233;rence, voici le d&#233;tail de la demande&#160;:
       <forced_endpoint>true</forced_endpoint>
       <visibility />
       <items>
-        <item id="1" type="register-comment">
+        <item type="register-comment" id="1">
           <comment>{{ form_workflow_form_contact_var_suite }}</comment>
           <to>
             <item role_id="_receiver">_receiver</item>
           </to>
-        </item><item id="2" type="sendmail">
+        </item><item type="sendmail" id="2">
           <to>
             <item role_id="_submitter">_submitter</item>
           </to><mail_template>indus-usager-demande-traitee</mail_template>
@@ -290,28 +290,30 @@ Pour r&#233;f&#233;rence, voici le d&#233;tail de la demande&#160;:
       <colour>FFFFFF</colour>
       <visibility />
       <items>
-        <item id="1" type="form">
+        <item type="form" id="1">
           <by>
             <item role_id="_receiver">_receiver</item>
           </by><varname>contact</varname>
+          <hide_submit_button>False</hide_submit_button>
           <formdef>
             <name>-</name>
             <fields>
               <field>
+                <type>text</type>
                 <label type="str">Suite donn&#233;e &#224; la demande de contact (uniquement en interne)</label>
-                <type type="str">text</type>
                 <required type="bool">True</required>
                 <hint type="str">Indiquez ici la fa&#231;on dont vous avez pu joindre le citoyen (par mail, par t&#233;l&#233;phone, via l'e-guichet...) et toute autre information utile pour vos coll&#232;gues. Le citoyen ne verra pas le contenu de ce champ.</hint>
                 <varname type="str">suite</varname>
                 <display_locations />
                 <prefill>
                   <type>none</type>
-                </prefill><pre type="bool">False</pre>
+                </prefill><display_mode type="str">plain</display_mode>
+                <anonymise type="bool">True</anonymise>
                 <id type="str">1</id>
               </field>
             </fields>
           </formdef>
-        </item><item id="2" type="jumponsubmit">
+        </item><item type="jumponsubmit" id="2">
           <status>finished</status>
           <set_marker_on_status>False</set_marker_on_status>
         </item>
@@ -322,8 +324,8 @@ Pour r&#233;f&#233;rence, voici le d&#233;tail de la demande&#160;:
       <name>-</name>
       <fields>
         <field>
+          <type>file</type>
           <label type="str">formulaire</label>
-          <type type="str">file</type>
           <required type="bool">True</required>
           <display_locations>
             <display_location>validation</display_location>
