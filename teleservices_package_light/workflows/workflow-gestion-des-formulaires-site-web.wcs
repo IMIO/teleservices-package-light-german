@@ -329,6 +329,14 @@ Pour r&#233;f&#233;rence, voici le d&#233;tail de la demande&#160;:
               </field>
             </fields>
           </formdef>
+        </item><item type="choice" id="2">
+          <label>Cl&#244;turer la demande</label>
+          <by>
+            <item role_id="_receiver">_receiver</item>
+          </by><status>finished</status>
+          <require_confirmation>False</require_confirmation>
+          <ignore_form_errors>False</ignore_form_errors>
+          <set_marker_on_status>False</set_marker_on_status>
         </item>
       </items>
     </status>
