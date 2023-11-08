@@ -18,6 +18,39 @@
   <max_field_id>8</max_field_id>
   <fields>
     <field>
+<type>string</type>
+      <label type="str">Nom</label>
+      <required type="bool">True</required>
+      <varname type="str">nom</varname>
+      <display_locations>
+        <display_location>validation</display_location>
+        <display_location>summary</display_location>
+        <display_location>listings</display_location>
+      </display_locations><extra_css_class type="str">grid-1-2</extra_css_class>
+      <prefill>
+        <locked>False</locked>
+        <type>user</type>
+        <value>_last_name</value>
+      </prefill><anonymise type="str">final</anonymise>
+      <id type="str">4667ca45-53f1-4a3f-9349-8b3d2be35b35</id>
+    </field><field>
+      <type>string</type>
+      <label type="str">Prenom</label>
+      <required type="bool">True</required>
+      <varname type="str">prenom</varname>
+      <display_locations>
+        <display_location>validation</display_location>
+        <display_location>summary</display_location>
+        <display_location>listings</display_location>
+      </display_locations><extra_css_class type="str">grid-1-2</extra_css_class>
+      <prefill>
+        <locked>False</locked>
+        <type>user</type>
+        <value>_first_name</value>
+      </prefill><anonymise type="str">final</anonymise>
+      <id type="str">13b4c6eb-31b4-43a4-be7f-79abf9cf21dc</id>
+    </field><field>
+      <type>email</type>
       <label type="str">Votre adresse &#233;lectronique</label>
       <type type="str">email</type>
       <required type="bool">True</required>
