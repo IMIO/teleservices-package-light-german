@@ -2,12 +2,14 @@
 <block id="20" url="https://formulaires-e-guichet.braine-lalleud.be/backoffice/forms/blocks/20/">
   <name>Copie de URL concern&#233;e</name>
   <slug>url_concernee_2</slug>
+<digest_template>{{ block_var_page_concernee }} - {{ block_var_erreur_rencontree }}</digest_template>
   <fields>
     <field>
+<type>string</type>
       <label type="str">Indiquez l'adresse de la page concern&#233;e</label>
-      <type type="str">string</type>
-      <required type="bool">False</required>
+            <required type="bool">False</required>
       <hint type="str">Si l'erreur ou le probl&#232;me appara&#238;t sur le site en entier, merci de ne pas compl&#233;ter l'adresse.</hint>
+<varname type="str">page_concernee</varname>
       <display_locations>
         <display_location>validation</display_location>
         <display_location>summary</display_location>
@@ -20,6 +22,7 @@
       <label type="str">Pr&#233;cisez l'erreur rencontr&#233;e :</label>
       <type type="str">text</type>
       <required type="bool">True</required>
+<varname type="str">erreur_rencontree</varname>
       <display_locations>
         <display_location>validation</display_location>
         <display_location>summary</display_location>
