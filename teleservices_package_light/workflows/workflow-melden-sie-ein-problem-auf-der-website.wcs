@@ -1,98 +1,96 @@
 <?xml version="1.0"?>
-<workflow id="93" url="https://formulaires-e-guichet.braine-lalleud.be/backoffice/workflows/93/">
-  <name>Signaler un probl&#232;me sur le site</name>
-  <slug>signaler-un-probleme-sur-le-site</slug>
+<workflow id="181" url="https://staging-formulaires.guichet-citoyen.be/backoffice/workflows/181/">
+  <name>Melden Sie ein Problem auf der Website</name>
+  <slug>melden-sie-ein-problem-auf-der-website</slug>
   <roles>
     <role id="_receiver">Agent traitant</role>
   </roles><possible_status>
     <status>
       <id>just_submitted</id>
-      <name>Nouvelle demande</name>
-      <colour>FFFFFF</colour>
+      <name>Neue Anfrage</name>
+      <colour>#FFFFFF</colour>
       <visibility>
         <role>_receiver</role>
       </visibility><items>
-        <item id="1" type="displaymsg">
-          <message>Merci pour votre signalement. 
-Notre administration reviendra vers vous pour effectuer le suivi requis.</message>
+        <item type="displaymsg" id="1">
+          <message>"&#8222;Vielen Dank f&#252;r Ihre Nachricht.
+Unsere Verwaltung wird sich bei Ihnen melden, um die erforderlichen Folgema&#223;nahmen durchzuf&#252;hren.&#8220;"</message>
           <level>info</level>
           <position>top</position>
           <to>
             <item role_id="_submitter">_submitter</item>
           </to>
-        </item><item id="2" type="dispatch">
+        </item><item type="dispatch" id="2">
           <role_key>_receiver</role_key>
           <dispatch_type>manual</dispatch_type>
-          <role_id role_id="{{ form_var_type_role }}">{{ form_var_type_role }}</role_id>
+          <role_id slug="{{ form_var_type_role }}" role_id="{{ form_var_type_role }}">{{ form_var_type_role }}</role_id>
           <operation_mode>set</operation_mode>
-        </item><item id="3" type="sendmail">
+        </item><item type="sendmail" id="3">
           <to>
             <item role_id="{{ form_var_type_mail }}">{{ form_var_type_mail }}</item>
-          </to><subject>Nouveau signalement ({{ form_name }})</subject>
-          <body>Bonjour,
+          </to><subject>Neue Meldung ({{ form_name }})</subject>
+          <body>"Hallo,
 
-Un citoyen a signal&#233; un probl&#232;me concernant le site web. 
-En cause : {{ form_var_type }}
+Ein B&#252;rger meldete ein Problem mit der Website.
+Problem: {{ form_var_type }}
 
-Vous pouvez :
+Sie k&#246;nnen :
 
-- `Consulter la demande via l'e-guichet &lt;{{ form_url_backoffice }}&gt;`_
+- `Konsultieren Sie die Anfrage &#252;ber das E-Fenster &lt;{{ form_url_backoffice }}&gt;`_
 
-- Voir le d&#233;tail de la demande ci-dessous :
+- Sehen Sie sich hiernach die Einzelheiten der Anfrage an:
 
 {{ form_details }}
 
-Cordialement
-</body>
-        </item><item id="4" type="sendmail">
+Mit freundlichen Gr&#252;&#223;en"</body>
+        </item><item type="sendmail" id="4">
           <to>
             <item role_id="{{ form_var_email }}">{{ form_var_email }}</item>
-          </to><subject>Votre demande {{ form_name }}</subject>
-          <body>Bonjour,
+          </to><subject>Ihre Anfrage {{ form_name }}</subject>
+          <body>"Guten Morgen,
 
-Nous vous confirmons la r&#233;ception de votre signalement &#224; notre administration communale.
+Wir best&#228;tigen den Eingang Ihrer Meldung bei unserer Gemeindeverwaltung.
 {% if form_user %}
-Vous pouvez la consulter en suivant ce lien&#160;: {{ form_url }}
+Sie k&#246;nnen sie anzeigen, indem Sie diesem Link folgen: {{ form_url }}
 {% endif %}
 
 {% if form_details %}
-Pour r&#233;f&#233;rence, voici le d&#233;tail de la demande&#160;:
+Als Referenz finden Sie hier die Einzelheiten der Anfrage:
 
 {{ form_details }}
-{% endif %}
-</body>
-        </item><item id="5" type="jump">
+{% endif %}"</body>
+        </item><item type="jump" id="5">
           <status>accepted</status>
           <set_marker_on_status>False</set_marker_on_status>
         </item>
       </items>
     </status><status>
       <id>accepted</id>
-      <name>En cours de traitement</name>
-      <colour>66CCFF</colour>
+      <name>in Bearbeitung</name>
+      <colour>#66CCFF</colour>
       <visibility />
       <items>
-        <item id="3" type="commentable">
+        <item type="commentable" id="1">
           <label>Commentaire</label>
-          <button_label>Ajouter le commentaire</button_label>
+          <button_label>Einen Kommentar hinzuf&#252;gen</button_label>
           <by>
             <item role_id="_receiver">_receiver</item>
-          </by><backoffice_info_text>&lt;p&gt;R&amp;eacute;pondez au citoyen dans cette zone de texte. Votre r&amp;eacute;ponse apparaitra dans le suivi de sa demande.&lt;/p&gt;
+          </by><backoffice_info_text>&lt;p&gt;Antworten Sie dem B&amp;uuml;rger in diesem Textfeld. Ihre Antwort erscheint im Workflow der Anfrage.&lt;/p&gt;
 </backoffice_info_text>
           <required>False</required>
-        </item><item id="2" type="jumponsubmit">
+        </item><item type="jumponsubmit" id="2">
           <status>0</status>
           <set_marker_on_status>False</set_marker_on_status>
         </item>
       </items>
     </status><status>
       <id>finished</id>
-      <name>Termin&#233;</name>
-      <colour>CCCCCC</colour>
+      <name>Beendet</name>
+      <colour>#CCCCCC</colour>
       <forced_endpoint>true</forced_endpoint>
       <visibility />
       <items>
-        <item id="1" type="register-comment">
+        <item type="register-comment" id="1">
           <comment>{{ form_workflow_form_contact_var_suite }}</comment>
           <to>
             <item role_id="_receiver">_receiver</item>
@@ -101,11 +99,11 @@ Pour r&#233;f&#233;rence, voici le d&#233;tail de la demande&#160;:
       </items>
     </status><status>
       <id>0</id>
-      <name>Trait&#233;</name>
-      <colour>FFFFFF</colour>
+      <name>Bearbeitet</name>
+      <colour>#FFFFFF</colour>
       <visibility />
       <items>
-        <item id="1" type="choice">
+        <item type="choice" id="1">
           <label>Cloturer la demande</label>
           <by>
             <item role_id="_receiver">_receiver</item>
@@ -115,24 +113,22 @@ Pour r&#233;f&#233;rence, voici le d&#233;tail de la demande&#160;:
 </backoffice_info_text>
           <ignore_form_errors>False</ignore_form_errors>
           <set_marker_on_status>False</set_marker_on_status>
-        </item><item id="3" type="form">
+        </item><item type="form" id="2">
           <by>
             <item role_id="_receiver">_receiver</item>
           </by><varname>contact</varname>
+          <hide_submit_button>True</hide_submit_button>
           <formdef>
             <name>-</name>
             <fields>
               <field>
-                <label type="str">Suite donn&#233;e au signalement (en interne)</label>
-                <type type="str">text</type>
+                <type>text</type>
+                <label type="str">Ergriffene Ma&#223;nahmen (intern)</label>
                 <required type="bool">True</required>
-                <hint type="str">Indiquez ici quelle suite vous avez donn&#233; au signalement du citoyen (par t&#233;l&#233;phone, par mail, via le guichet) et toute autre information utile pour vos coll&#232;gues. Le citoyen ne verra pas ce qui est not&#233;.</hint>
+                <hint type="str">Geben Sie hier an, welche Ma&#223;nahmen Sie zur B&#252;rgeranfrage ergriffen haben (telefonisch, per E-Mail, &#252;ber den Schalter) und geben Sie weitere n&#252;tzliche Informationen f&#252;r Ihre Kollegen an. Der B&#252;rger sieht nicht, was vermerkt ist.</hint>
                 <varname type="str">suite</varname>
                 <display_locations />
-                <prefill>
-                  <locked>False</locked>
-                  <type>none</type>
-                </prefill><pre type="bool">False</pre>
+                <display_mode type="str">plain</display_mode>
                 <id type="str">1</id>
               </field>
             </fields>
