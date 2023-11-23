@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<mail-template id="62" url="https://staging-formulaires.guichet-citoyen.be/backoffice/workflows/mail-templates/62/">
+  <name>Indus - Usager - Demande trait&#233;e (german)</name>
+  <slug>indus-usager-demande-traitee-german</slug>
+  <subject>{{ form_name }} : Anfrage bearbeitet</subject>
+  <body>Hallo {% if form_var_prenom %} {{ form_var_prenom }}{% endif %},
+
+Wir informieren Sie dar&#252;ber, dass Ihre Anfrage betreffend {{ form_name }} bearbeitet wurde. Ihr Dokument wird &#252;bermittelt durch {{ form_var_destinations }}.
+
+{% if form_comment %}Neuer Kommentar : {{ form_comment }}{% endif %}
+
+{% if form_status_changed %}
+Der Status Ihrer Anfrage hat sich gerade ge&#228;ndert von &#8222;{{ form_previous_status }}&#8220; zu &#8222;{{ form_status }}&#8220;).
+{% endif %}
+
+{% if "porte" in form_var_destinations %}
+`Ihre Dossiermappe &#246;ffnen &lt;{{porte_doc_url}}&gt;`_
+{% endif %}
+
+{% if form_user %}
+Ihre Anfrage einsehen: &lt;{{ form_url }}&gt;`_
+{% endif %}
+
+{% if form_evolution %}
+{{ form_evolution }}
+{% endif %}
+
+Mit freundlichen Gr&#252;&#223;en</body>
+</mail-template>
