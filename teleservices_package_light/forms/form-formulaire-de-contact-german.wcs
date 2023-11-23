@@ -1,8 +1,7 @@
 <?xml version="1.0"?>
-<formdef id="56" url="">
-  <name>Formulaire de contact</name>
-  <url_name>formulaire-de-contact</url_name>
-  <internal_identifier>formulaire-de-contact</internal_identifier>
+<formdef id="290" url="https://staging-formulaires.guichet-citoyen.be/backoffice/forms/290/">
+  <name>Kontaktformular</name>
+  <url_name>kontaktformular</url_name>
   <drafts_lifespan>2</drafts_lifespan>
   <discussion>false</discussion>
   <detailed_emails>true</detailed_emails>
@@ -14,45 +13,11 @@
   <include_download_all_button>false</include_download_all_button>
   <has_captcha>false</has_captcha>
   <skip_from_360_view>false</skip_from_360_view>
-  <workflow slug="gestion-des-formulaires-site-web" workflow_id="33">Gestion des formulaires site web</workflow>
-  <max_field_id>8</max_field_id>
+  <workflow slug="gestion-des-formulaires-site-web" workflow_id="150">Gestion des formulaires site web</workflow>
   <fields>
     <field>
-<type>string</type>
-      <label type="str">Nom</label>
-      <required type="bool">True</required>
-      <varname type="str">nom</varname>
-      <display_locations>
-        <display_location>validation</display_location>
-        <display_location>summary</display_location>
-        <display_location>listings</display_location>
-      </display_locations><extra_css_class type="str">grid-1-2</extra_css_class>
-      <prefill>
-        <locked>False</locked>
-        <type>user</type>
-        <value>_last_name</value>
-      </prefill><anonymise type="str">final</anonymise>
-      <id type="str">4667ca45-53f1-4a3f-9349-8b3d2be35b35</id>
-    </field><field>
-      <type>string</type>
-      <label type="str">Prenom</label>
-      <required type="bool">True</required>
-      <varname type="str">prenom</varname>
-      <display_locations>
-        <display_location>validation</display_location>
-        <display_location>summary</display_location>
-        <display_location>listings</display_location>
-      </display_locations><extra_css_class type="str">grid-1-2</extra_css_class>
-      <prefill>
-        <locked>False</locked>
-        <type>user</type>
-        <value>_first_name</value>
-      </prefill><anonymise type="str">final</anonymise>
-      <id type="str">13b4c6eb-31b4-43a4-be7f-79abf9cf21dc</id>
-    </field><field>
       <type>email</type>
-      <label type="str">Votre adresse &#233;lectronique</label>
-      <type type="str">email</type>
+      <label type="str">Ihre E-Mail-Adresse</label>
       <required type="bool">True</required>
       <varname type="str">email</varname>
       <display_locations>
@@ -61,54 +26,53 @@
         <display_location>listings</display_location>
       </display_locations><extra_css_class type="str">grid-1-2</extra_css_class>
       <prefill>
+        <locked>False</locked>
         <type>user</type>
         <value>_email</value>
       </prefill><id type="str">4</id>
     </field><field>
-      <label type="str">T&#233;l&#233;phone</label>
-      <type type="str">string</type>
+      <type>string</type>
+      <label type="str">Telefon</label>
       <required type="bool">False</required>
       <display_locations>
         <display_location>validation</display_location>
         <display_location>summary</display_location>
       </display_locations><extra_css_class type="str">grid-1-2</extra_css_class>
-      <prefill>
-        <type>none</type>
-      </prefill><anonymise type="bool">True</anonymise>
+      <anonymise type="str">final</anonymise>
       <id type="str">6</id>
     </field><field>
-      <label type="str">Service &#224; contacter</label>
-      <type type="str">item</type>
+      <type>item</type>
+      <label type="str">zu kontaktierender Dienst</label>
       <required type="bool">True</required>
-      <hint type="str">S&#233;lectionnez un service dans la liste</hint>
+      <hint type="str">W&#228;hlen Sie einen Dienst aus der Liste aus:</hint>
       <varname type="str">service</varname>
       <display_locations>
         <display_location>validation</display_location>
         <display_location>summary</display_location>
         <display_location>listings</display_location>
       </display_locations><extra_css_class type="str">newline grid-1-2</extra_css_class>
-      <prefill>
-        <type>none</type>
-      </prefill><display_mode type="str">list</display_mode>
-      <items />
+      <display_mode type="str">list</display_mode>
       <data_source>
         <type>carddef:services-formulaire-de-contact:ordre-alphabetique</type>
       </data_source><in_filters type="bool">False</in_filters>
-      <anonymise type="bool">False</anonymise>
+      <anonymise type="str">no</anonymise>
       <display_disabled_items type="bool">False</display_disabled_items>
+      <use_hint_as_first_option type="bool">True</use_hint_as_first_option>
+      <image_desktop_size type="int">150</image_desktop_size>
+      <image_mobile_size type="int">75</image_mobile_size>
       <id type="str">1</id>
     </field><field>
-      <label type="str">&lt;p&gt;Aucune d&amp;eacute;marche susceptible d&amp;#39;&amp;ecirc;tre r&amp;eacute;alis&amp;eacute;e directement depuis notre &lt;a href="https://e-guichet.braine-lalleud.be/demarches/"&gt;e-guichet &lt;/a&gt;ne sera trait&amp;eacute;e &amp;agrave; partir de ce formulaire de contact. Merci de n&amp;#39;utiliser ce formulaire que pour vos questions et remarques.&lt;/p&gt;
+      <type>comment</type>
+      <label type="str">&lt;p&gt;&amp;Uuml;ber dieses Kontaktformular werden keine Verwaltungsprozeduren bearbeitet, die &amp;uuml;ber unser Online-Schalter erledigt werden k&amp;ouml;nnen. Bitte verwenden Sie dieses Formular nur f&amp;uuml;r Ihre Fragen und Anmerkungen.&lt;/p&gt;
 </label>
-      <type type="str">comment</type>
       <condition>
         <type>django</type>
         <value>form_var_service  == "Citoyennet&#233;"</value>
       </condition><display_locations />
       <id type="str">7</id>
     </field><field>
-      <label type="str">Votre question</label>
-      <type type="str">text</type>
+      <type>text</type>
+      <label type="str">Ihre Frage</label>
       <required type="bool">True</required>
       <varname type="str">question</varname>
       <display_locations>
@@ -116,14 +80,13 @@
         <display_location>summary</display_location>
         <display_location>listings</display_location>
       </display_locations><extra_css_class type="str">newline grid-1-2</extra_css_class>
-      <prefill>
-        <type>none</type>
-      </prefill><rows type="str">5</rows>
+      <rows type="str">5</rows>
       <display_mode type="str">plain</display_mode>
+      <anonymise type="str">final</anonymise>
       <id type="str">2</id>
     </field><field>
-      <label type="str">Ajoutez un fichier si vous le souhaitez</label>
-      <type type="str">file</type>
+      <type>file</type>
+      <label type="str">F&#252;gen Sie eine Datei hinzu, wenn Sie m&#246;chten</label>
       <condition>
         <type>django</type>
         <value>false</value>
@@ -138,8 +101,8 @@
       <storage type="str">default</storage>
       <id type="str">5</id>
     </field><field>
-      <label type="str">Ajouter des fichiers si vous le souhaitez</label>
-      <type type="str">block:ajouter_un_fichier</type>
+      <type>block</type>
+      <label type="str">F&#252;gen Sie Dateien hinzu, wenn Sie m&#246;chten. Datei</label>
       <required type="bool">False</required>
       <varname type="str">fichiers</varname>
       <display_locations>
@@ -148,9 +111,10 @@
         <display_location>listings</display_location>
       </display_locations><default_items_count type="int">1</default_items_count>
       <max_items type="int">5</max_items>
-      <add_element_label type="str">Ajouter un autre fichier</add_element_label>
+      <add_element_label type="str">weitere Datei hinzuf&#252;gen</add_element_label>
       <label_display type="str">normal</label_display>
       <remove_button type="bool">True</remove_button>
+      <block_slug type="str">ajouter_un_fichier</block_slug>
       <id type="str">8</id>
     </field>
   </fields><user-roles>
