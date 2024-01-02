@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<workflow id="181" url="https://staging-formulaires.guichet-citoyen.be/backoffice/workflows/181/">
+<workflow id="58" url="https://staging2-formulaires.guichet-citoyen.be/backoffice/workflows/58/">
   <name>Melden Sie ein Problem auf der Website</name>
   <slug>melden-sie-ein-problem-auf-der-website</slug>
   <roles>
@@ -13,8 +13,8 @@
         <role>_receiver</role>
       </visibility><items>
         <item type="displaymsg" id="1">
-          <message>"&#8222;Vielen Dank f&#252;r Ihre Nachricht.
-Unsere Verwaltung wird sich bei Ihnen melden, um die erforderlichen Folgema&#223;nahmen durchzuf&#252;hren.&#8220;"</message>
+          <message>Vielen Dank f&#252;r Ihre Nachricht.
+Unsere Verwaltung wird sich bei Ihnen melden, um die erforderlichen Folgema&#223;nahmen durchzuf&#252;hren.</message>
           <level>info</level>
           <position>top</position>
           <to>
@@ -29,7 +29,7 @@ Unsere Verwaltung wird sich bei Ihnen melden, um die erforderlichen Folgema&#223
           <to>
             <item role_id="{{ form_var_type_mail }}">{{ form_var_type_mail }}</item>
           </to><subject>Neue Meldung ({{ form_name }})</subject>
-          <body>"Hallo,
+          <body>Hallo,
 
 Ein B&#252;rger meldete ein Problem mit der Website.
 Problem: {{ form_var_type }}
@@ -42,12 +42,12 @@ Sie k&#246;nnen :
 
 {{ form_details }}
 
-Mit freundlichen Gr&#252;&#223;en"</body>
+Mit freundlichen Gr&#252;&#223;en</body>
         </item><item type="sendmail" id="4">
           <to>
             <item role_id="{{ form_var_email }}">{{ form_var_email }}</item>
           </to><subject>Ihre Anfrage {{ form_name }}</subject>
-          <body>"Guten Morgen,
+          <body>Guten Morgen,
 
 Wir best&#228;tigen den Eingang Ihrer Meldung bei unserer Gemeindeverwaltung.
 {% if form_user %}
@@ -58,7 +58,7 @@ Sie k&#246;nnen sie anzeigen, indem Sie diesem Link folgen: {{ form_url }}
 Als Referenz finden Sie hier die Einzelheiten der Anfrage:
 
 {{ form_details }}
-{% endif %}"</body>
+{% endif %}</body>
         </item><item type="jump" id="5">
           <status>accepted</status>
           <set_marker_on_status>False</set_marker_on_status>
@@ -104,12 +104,12 @@ Als Referenz finden Sie hier die Einzelheiten der Anfrage:
       <visibility />
       <items>
         <item type="choice" id="1">
-          <label>Cloturer la demande</label>
+          <label>Als beendet markieren</label>
           <by>
             <item role_id="_receiver">_receiver</item>
           </by><status>finished</status>
           <require_confirmation>True</require_confirmation>
-          <backoffice_info_text>&lt;p&gt;Cliquer sur ce bouton permet de cloturer d&amp;eacute;finitivement la demande.&lt;/p&gt;
+          <backoffice_info_text>&lt;p&gt;Wenn Sie auf diese Schaltfl&amp;auml;che klicken, wird der Antrag endg&amp;uuml;ltig geschlossen.&lt;/p&gt;
 </backoffice_info_text>
           <ignore_form_errors>False</ignore_form_errors>
           <set_marker_on_status>False</set_marker_on_status>

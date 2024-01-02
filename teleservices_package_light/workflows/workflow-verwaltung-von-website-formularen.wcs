@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<workflow id="180" url="https://staging-formulaires.guichet-citoyen.be/backoffice/workflows/180/">
+<workflow id="56" url="https://staging2-formulaires.guichet-citoyen.be/backoffice/workflows/56/">
   <name>Verwaltung von Website-Formularen</name>
   <slug>verwaltung-von-website-formularen</slug>
   <roles>
@@ -193,7 +193,6 @@ RVRBLUlORi9tYW5pZmVzdC54bWxQSwUGAAAAABEAEQBlBAAApSAAAAAA
           <varname>formulaire</varname>
           <backoffice_filefield_id>bof78850cf-235e-418c-9c70-dea693df9488</backoffice_filefield_id>
           <attach_to_history>False</attach_to_history>
-          <push_to_portfolio>False</push_to_portfolio>
           <method>non-interactive</method>
           <by>
             <item role_id="_receiver">_receiver</item>
@@ -202,7 +201,7 @@ RVRBLUlORi9tYW5pZmVzdC54bWxQSwUGAAAAABEAEQBlBAAApSAAAAAA
           <to>
             <item role_id="{{ form_var_service_mail }}">{{ form_var_service_mail }}</item>
           </to><subject>Neue Anfrage ({{ form_name }})</subject>
-          <body>"Hallo,
+          <body>Hallo,
 
 Ein B&#252;rger hat &#252;ber die Website eine neue Frage gestellt.
 
@@ -214,7 +213,7 @@ Sie k&#246;nnen :
 
 {{ form_details }}
 
-Mit freundlichen Gr&#252;&#223;en"</body>
+Mit freundlichen Gr&#252;&#223;en</body>
           <attachments>
             <attachment>{{ form_var_fichier }}</attachment>
             <attachment>{{ form_var_fichiers_0_fichier }}</attachment>
@@ -227,18 +226,18 @@ Mit freundlichen Gr&#252;&#223;en"</body>
           <to>
             <item role_id="{{ form_var_email }}">{{ form_var_email }}</item>
           </to><subject>Ihre Anfrage {{ form_name }}</subject>
-          <body>"Hallo,
+          <body>Hallo,
 
 wir best&#228;tigen den Eingang Ihrer Anfrage.
 {% if form_user %}
-Sie k&#246;nnen sie anzeigen, indem Sie diesem Link folgen: {{ form_url }}&#160;: {{ form_url }}
+Sie k&#246;nnen sie anzeigen, indem Sie diesem Link folgen: {{ form_url }} : {{ form_url }}
 {% endif %}
 
 {% if form_details %}
 Hiernach finden Sie die Einzelheiten der Anfrage:
 
 {{ form_details }}
-{% endif %}"</body>
+{% endif %}</body>
         </item><item type="jump" id="5">
           <status>accepted</status>
           <set_marker_on_status>False</set_marker_on_status>
@@ -251,25 +250,23 @@ Hiernach finden Sie die Einzelheiten der Anfrage:
       <visibility />
       <items>
         <item type="commentable" id="1">
-          <label>Commentaire</label>
+          <label>Kommentar</label>
           <button_label>einen Kommentar hinzuf&#252;gen</button_label>
           <by>
             <item role_id="_receiver">_receiver</item>
           </by><varname>reponse</varname>
-          <backoffice_info_text>&lt;p&gt;Antworten Sie dem B&amp;uuml;rger in diesem Textfeld. Ihre Antwort erscheint im Workflow der Anfrage.&lt;/p&gt;
+          <backoffice_info_text>&lt;p&gt;Zone d&amp;eacute;di&amp;eacute;e &amp;agrave; une r&amp;eacute;ponse &amp;agrave; donner au citoyen.&lt;/p&gt;
 </backoffice_info_text>
           <required>False</required>
         </item><item type="addattachment" id="2">
           <by>
             <item role_id="_receiver">_receiver</item>
           </by><required>False</required>
-          <title>Transf&#233;rer un fichier</title>
+          <title>F&#252;gen Sie eine Datei hinzu</title>
           <display_title>True</display_title>
-          <button_label>Transf&#233;rer un fichier</button_label>
+          <button_label>F&#252;gen Sie eine Datei hinzu</button_label>
           <display_button>True</display_button>
           <attach_to_history>True</attach_to_history>
-          <allow_portfolio_picking>False</allow_portfolio_picking>
-          <push_to_portfolio>False</push_to_portfolio>
         </item><item type="choice" id="3">
           <label>Vers trait&#233;</label>
           <by>
@@ -295,7 +292,7 @@ Hiernach finden Sie die Einzelheiten der Anfrage:
         </item><item type="sendmail" id="2">
           <to>
             <item role_id="_submitter">_submitter</item>
-          </to><mail_template>indus-usager-demande-traitee-german</mail_template>
+          </to><mail_template>indus-nutzer-antrag-bearbeitet</mail_template>
         </item>
       </items>
     </status><status>
@@ -314,15 +311,12 @@ Hiernach finden Sie die Einzelheiten der Anfrage:
             <fields>
               <field>
                 <type>text</type>
-                <label type="str">Suite donn&#233;e &#224; la demande de contact (uniquement en interne)</label>
+                <label type="str">Folgema&#223;nahmen zur Kontaktanfrage (nur intern)</label>
                 <required type="bool">True</required>
-                <hint type="str">Indiquez ici la fa&#231;on dont vous avez pu joindre le citoyen (par mail, par t&#233;l&#233;phone, via l'e-guichet...) et toute autre information utile pour vos coll&#232;gues. Le citoyen ne verra pas le contenu de ce champ.</hint>
+                <hint type="str">Geben Sie hier an, wie Sie den B&#252;rger erreichen konnten (per E-Mail, Telefon, &#252;ber den E-Government-Schalter...) und alle anderen Informationen, die f&#252;r Ihre Kollegen n&#252;tzlich sind. Der B&#252;rger wird den Inhalt dieses Feldes nicht sehen.</hint>
                 <varname type="str">suite</varname>
                 <display_locations />
-                <prefill>
-                  <type>none</type>
-                </prefill><display_mode type="str">plain</display_mode>
-                <anonymise type="str">final</anonymise>
+                <display_mode type="str">plain</display_mode>
                 <id type="str">1</id>
               </field>
             </fields>
@@ -349,7 +343,8 @@ Hiernach finden Sie die Einzelheiten der Anfrage:
           <display_locations>
             <display_location>validation</display_location>
             <display_location>summary</display_location>
-          </display_locations><allow_portfolio_picking type="bool">False</allow_portfolio_picking>
+          </display_locations><anonymise type="str">final</anonymise>
+          <allow_portfolio_picking type="bool">False</allow_portfolio_picking>
           <automatic_image_resize type="bool">False</automatic_image_resize>
           <storage type="str">default</storage>
           <id type="str">bof78850cf-235e-418c-9c70-dea693df9488</id>
