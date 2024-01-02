@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<block id="19" url="https://staging2-formulaires.guichet-citoyen.be/backoffice/forms/blocks/19/">
+  <name>betroffenen Seite (url)</name>
+  <slug>url_concernee_german</slug>
+  <digest_template>{{ block_var_page_concernee }} - {{ block_var_erreur_rencontree }}</digest_template>
+  <fields>
+    <field>
+      <type>string</type>
+      <label type="str">Geben Sie die Adresse der betroffenen Seite an.</label>
+      <required type="bool">True</required>
+      <varname type="str">page_concernee</varname>
+      <display_locations>
+        <display_location>validation</display_location>
+        <display_location>summary</display_location>
+      </display_locations><extra_css_class type="str">grid-1-1</extra_css_class>
+      <anonymise type="str">final</anonymise>
+      <id type="str">bf592e80a2-d875-41de-a593-0b924aa0a855</id>
+    </field><field>
+      <type>text</type>
+      <label type="str">Pr&#228;zisieren Sie den aufgetretenen Fehler.</label>
+      <required type="bool">True</required>
+      <varname type="str">erreur_rencontree</varname>
+      <display_locations>
+        <display_location>validation</display_location>
+        <display_location>summary</display_location>
+      </display_locations><extra_css_class type="str">newline grid-1-1</extra_css_class>
+      <anonymise type="str">final</anonymise>
+      <display_mode type="str">plain</display_mode>
+      <id type="str">bfa30c3e5a-88ce-4f40-b657-f2ab5dc7f7ac</id>
+    </field>
+  </fields>
+</block>

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<block id="18" url="https://staging2-formulaires.guichet-citoyen.be/backoffice/forms/blocks/18/">
+  <name>weitere Datei hinzuf&#252;gen</name>
+  <slug>imio_ajouter_un_fichier_german</slug>
+  <fields>
+    <field>
+      <type>file</type>
+      <label type="str">weitere Datei hinzuf&#252;gen</label>
+      <required type="bool">True</required>
+      <varname type="str">fichier</varname>
+      <display_locations>
+        <display_location>validation</display_location>
+        <display_location>summary</display_location>
+      </display_locations><anonymise type="str">final</anonymise>
+      <allow_portfolio_picking type="bool">False</allow_portfolio_picking>
+      <automatic_image_resize type="bool">False</automatic_image_resize>
+      <storage type="str">default</storage>
+      <id type="str">bf229ecbb4-57e1-4f03-bac4-31f10a00acc3</id>
+    </field>
+  </fields>
+</block>
