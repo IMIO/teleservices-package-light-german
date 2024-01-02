@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
-<formdef id="290" url="https://staging-formulaires.guichet-citoyen.be/backoffice/forms/290/">
+<formdef id="95" url="https://staging2-formulaires.guichet-citoyen.be/backoffice/forms/95/">
   <name>Kontaktformular</name>
   <url_name>kontaktformular</url_name>
   <drafts_lifespan>2</drafts_lifespan>
   <discussion>false</discussion>
   <detailed_emails>true</detailed_emails>
-  <disabled>false</disabled>
+  <disabled>true</disabled>
   <only_allow_one>false</only_allow_one>
   <enable_tracking_codes>true</enable_tracking_codes>
   <confirmation>true</confirmation>
@@ -13,9 +13,42 @@
   <include_download_all_button>false</include_download_all_button>
   <has_captcha>false</has_captcha>
   <skip_from_360_view>false</skip_from_360_view>
-  <workflow slug="gestion-des-formulaires-site-web" workflow_id="150">Gestion des formulaires site web</workflow>
+  <category slug="contact" category_id="20">Contact</category>
+  <workflow slug="verwaltung-von-website-formularen" workflow_id="56">Verwaltung von Website-Formularen</workflow>
   <fields>
     <field>
+      <type>string</type>
+      <label type="str">Name</label>
+      <required type="bool">True</required>
+      <varname type="str">nom</varname>
+      <display_locations>
+        <display_location>validation</display_location>
+        <display_location>summary</display_location>
+        <display_location>listings</display_location>
+      </display_locations><extra_css_class type="str">grid-1-2</extra_css_class>
+      <prefill>
+        <locked>False</locked>
+        <type>user</type>
+        <value>_last_name</value>
+      </prefill><anonymise type="str">final</anonymise>
+      <id type="str">4667ca45-53f1-4a3f-9349-8b3d2be35b35</id>
+    </field><field>
+      <type>string</type>
+      <label type="str">Vorname</label>
+      <required type="bool">True</required>
+      <varname type="str">prenom</varname>
+      <display_locations>
+        <display_location>validation</display_location>
+        <display_location>summary</display_location>
+        <display_location>listings</display_location>
+      </display_locations><extra_css_class type="str">grid-1-2</extra_css_class>
+      <prefill>
+        <locked>False</locked>
+        <type>user</type>
+        <value>_first_name</value>
+      </prefill><anonymise type="str">final</anonymise>
+      <id type="str">13b4c6eb-31b4-43a4-be7f-79abf9cf21dc</id>
+    </field><field>
       <type>email</type>
       <label type="str">Ihre E-Mail-Adresse</label>
       <required type="bool">True</required>
@@ -29,7 +62,8 @@
         <locked>False</locked>
         <type>user</type>
         <value>_email</value>
-      </prefill><id type="str">4</id>
+      </prefill><anonymise type="str">final</anonymise>
+      <id type="str">4</id>
     </field><field>
       <type>string</type>
       <label type="str">Telefon</label>
@@ -51,11 +85,11 @@
         <display_location>summary</display_location>
         <display_location>listings</display_location>
       </display_locations><extra_css_class type="str">newline grid-1-2</extra_css_class>
+      <anonymise type="str">no</anonymise>
       <display_mode type="str">list</display_mode>
       <data_source>
         <type>carddef:services-formulaire-de-contact:ordre-alphabetique</type>
       </data_source><in_filters type="bool">False</in_filters>
-      <anonymise type="str">no</anonymise>
       <display_disabled_items type="bool">False</display_disabled_items>
       <use_hint_as_first_option type="bool">True</use_hint_as_first_option>
       <image_desktop_size type="int">150</image_desktop_size>
@@ -80,9 +114,9 @@
         <display_location>summary</display_location>
         <display_location>listings</display_location>
       </display_locations><extra_css_class type="str">newline grid-1-2</extra_css_class>
+      <anonymise type="str">final</anonymise>
       <rows type="str">5</rows>
       <display_mode type="str">plain</display_mode>
-      <anonymise type="str">final</anonymise>
       <id type="str">2</id>
     </field><field>
       <type>file</type>
@@ -96,31 +130,31 @@
         <display_location>validation</display_location>
         <display_location>summary</display_location>
         <display_location>listings</display_location>
-      </display_locations><allow_portfolio_picking type="bool">False</allow_portfolio_picking>
+      </display_locations><anonymise type="str">final</anonymise>
+      <allow_portfolio_picking type="bool">False</allow_portfolio_picking>
       <automatic_image_resize type="bool">False</automatic_image_resize>
       <storage type="str">default</storage>
       <id type="str">5</id>
     </field><field>
       <type>block</type>
-      <label type="str">F&#252;gen Sie Dateien hinzu, wenn Sie m&#246;chten. Datei</label>
+      <label type="str">F&#252;gen Sie Dateien hinzu, wenn Sie m&#246;chten</label>
       <required type="bool">False</required>
       <varname type="str">fichiers</varname>
       <display_locations>
         <display_location>validation</display_location>
         <display_location>summary</display_location>
         <display_location>listings</display_location>
-      </display_locations><default_items_count type="int">1</default_items_count>
+      </display_locations><anonymise type="str">final</anonymise>
+      <default_items_count type="int">1</default_items_count>
       <max_items type="int">5</max_items>
       <add_element_label type="str">weitere Datei hinzuf&#252;gen</add_element_label>
       <label_display type="str">normal</label_display>
       <remove_button type="bool">True</remove_button>
-      <block_slug type="str">ajouter_un_fichier</block_slug>
-      <id type="str">8</id>
+      <block_slug type="str">imio_ajouter_un_fichier_german</block_slug>
+      <id type="str">f59006bf-e308-4bdf-96e9-3c8aa7f8eded</id>
     </field>
-  </fields><user-roles>
-    <role slug="citoyen-test" role_id="facf46c672034a8ca2009c6c499e53bf">Citoyen (test)</role>
-  </user-roles><roles>
-    <role slug="testing-dmu" role_id="316b731c79c94645b3664801cc7f381e" role_key="_receiver">iA.T&#233;l&#233;services - Testing</role>
+  </fields><roles>
+    <role slug="agents-traitant-population-etat-civil" role_id="a0478c2a2d1549149c4fdef742379f7a" role_key="_receiver">Agents traitant - Population, etat civil</role>
   </roles><options />
   <custom_views />
   <geolocations />

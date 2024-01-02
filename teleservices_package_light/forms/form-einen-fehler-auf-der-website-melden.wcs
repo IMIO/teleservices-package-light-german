@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
-<formdef id="291" url="https://staging-formulaires.guichet-citoyen.be/backoffice/forms/291/">
+<formdef id="96" url="https://staging2-formulaires.guichet-citoyen.be/backoffice/forms/96/">
   <name>Einen Fehler auf der Website melden</name>
   <url_name>einen-fehler-auf-der-website-melden</url_name>
   <drafts_lifespan>2</drafts_lifespan>
   <discussion>false</discussion>
   <detailed_emails>true</detailed_emails>
-  <disabled>false</disabled>
+  <disabled>true</disabled>
   <only_allow_one>false</only_allow_one>
   <enable_tracking_codes>true</enable_tracking_codes>
   <confirmation>true</confirmation>
@@ -13,7 +13,8 @@
   <include_download_all_button>false</include_download_all_button>
   <has_captcha>false</has_captcha>
   <skip_from_360_view>false</skip_from_360_view>
-  <workflow slug="melden-sie-ein-problem-auf-der-website" workflow_id="181">Melden Sie ein Problem auf der Website</workflow>
+  <category slug="contact" category_id="20">Contact</category>
+  <workflow slug="melden-sie-ein-problem-auf-der-website" workflow_id="58">Melden Sie ein Problem auf der Website</workflow>
   <fields>
     <field>
       <type>title</type>
@@ -36,6 +37,38 @@
       <display_locations />
       <id type="str">12</id>
     </field><field>
+      <type>string</type>
+      <label type="str">Name</label>
+      <required type="bool">True</required>
+      <varname type="str">nom</varname>
+      <display_locations>
+        <display_location>validation</display_location>
+        <display_location>summary</display_location>
+        <display_location>listings</display_location>
+      </display_locations><extra_css_class type="str">grid-2-4</extra_css_class>
+      <prefill>
+        <locked>False</locked>
+        <type>user</type>
+        <value>_last_name</value>
+      </prefill><anonymise type="str">final</anonymise>
+      <id type="str">3e1ee1b5-1938-4b8c-b4f0-443cc685e8cb</id>
+    </field><field>
+      <type>string</type>
+      <label type="str">Vorname</label>
+      <required type="bool">True</required>
+      <varname type="str">prenom</varname>
+      <display_locations>
+        <display_location>validation</display_location>
+        <display_location>summary</display_location>
+        <display_location>listings</display_location>
+      </display_locations><extra_css_class type="str">grid-2-4</extra_css_class>
+      <prefill>
+        <locked>False</locked>
+        <type>user</type>
+        <value>_first_name</value>
+      </prefill><anonymise type="str">final</anonymise>
+      <id type="str">6654d46f-69f1-4877-bca0-5df79489d75e</id>
+    </field><field>
       <type>email</type>
       <label type="str">E-Mail-Adresse</label>
       <required type="bool">True</required>
@@ -48,7 +81,8 @@
         <locked>False</locked>
         <type>user</type>
         <value>_email</value>
-      </prefill><id type="str">6</id>
+      </prefill><anonymise type="str">final</anonymise>
+      <id type="str">6</id>
     </field><field>
       <type>string</type>
       <label type="str">Telefon</label>
@@ -76,6 +110,7 @@
         <display_location>validation</display_location>
         <display_location>summary</display_location>
       </display_locations><extra_css_class type="str">grid-1-2</extra_css_class>
+      <anonymise type="str">no</anonymise>
       <display_mode type="str">list</display_mode>
       <items>
         <item>Un probl&#232;me d'accessibilit&#233;</item>
@@ -84,7 +119,6 @@
       </items><data_source>
         <type>carddef:services-signaler-un-probleme</type>
       </data_source><in_filters type="bool">False</in_filters>
-      <anonymise type="str">no</anonymise>
       <display_disabled_items type="bool">False</display_disabled_items>
       <use_hint_as_first_option type="bool">True</use_hint_as_first_option>
       <image_desktop_size type="int">150</image_desktop_size>
@@ -93,21 +127,42 @@
     </field><field>
       <type>block</type>
       <label type="str">Geben Sie die Adresse der betroffenen Seite an.</label>
-      <required type="bool">False</required>
+      <condition>
+        <type>django</type>
+        <value>form_var_type == "Eine falsche Information auf einer Seite der Gemeindewebsite"</value>
+      </condition><required type="bool">True</required>
       <display_locations>
         <display_location>validation</display_location>
         <display_location>summary</display_location>
-      </display_locations><default_items_count type="int">1</default_items_count>
+      </display_locations><extra_css_class type="str">grid-1-1</extra_css_class>
+      <anonymise type="str">final</anonymise>
+      <default_items_count type="int">1</default_items_count>
       <max_items type="int">5</max_items>
-      <add_element_label type="str">F&#252;gen Sie eine andere Adresse hinzu.</add_element_label>
-      <label_display type="str">normal</label_display>
+      <label_display type="str">hidden</label_display>
       <remove_button type="bool">True</remove_button>
       <block_slug type="str">url_concernee_german</block_slug>
-      <id type="str">d9bbf69f-a976-4078-88ff-d8913a276b05</id>
+      <id type="str">f7967197-c3f5-468e-a360-a1197fe7d0be</id>
+    </field><field>
+      <type>block</type>
+      <label type="str">Geben Sie die Adresse der betroffenen Seite an (2).</label>
+      <condition>
+        <type>django</type>
+        <value>form_var_type == "Eine Nichteinhaltung der DSGVO" or form_var_type == "Ein Problem mit der Zug&#228;nglichkeit"</value>
+      </condition><required type="bool">True</required>
+      <display_locations>
+        <display_location>validation</display_location>
+        <display_location>summary</display_location>
+      </display_locations><anonymise type="str">final</anonymise>
+      <default_items_count type="int">1</default_items_count>
+      <max_items type="int">5</max_items>
+      <add_element_label type="str">F&#252;gen Sie eine andere Adresse hinzu.</add_element_label>
+      <label_display type="str">hidden</label_display>
+      <remove_button type="bool">True</remove_button>
+      <block_slug type="str">url_concernee2_german</block_slug>
+      <id type="str">2b3b4409-e534-4378-ae30-26552f0c7f24</id>
     </field>
-  </fields><user-roles>
-    <role slug="citoyen-test" role_id="facf46c672034a8ca2009c6c499e53bf">Citoyen (test)</role>
-  </user-roles><options />
+  </fields><roles />
+  <options />
   <custom_views />
   <geolocations />
 </formdef>
