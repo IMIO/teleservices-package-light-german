@@ -5,7 +5,7 @@
   <drafts_lifespan>2</drafts_lifespan>
   <discussion>false</discussion>
   <detailed_emails>true</detailed_emails>
-  <disabled>true</disabled>
+  <disabled>false</disabled>
   <only_allow_one>false</only_allow_one>
   <enable_tracking_codes>true</enable_tracking_codes>
   <confirmation>true</confirmation>
@@ -17,6 +17,10 @@
   <workflow slug="verwaltung-von-website-formularen" workflow_id="56">Verwaltung von Website-Formularen</workflow>
   <fields>
     <field>
+      <type>page</type>
+      <label type="str">Kontaktformular</label>
+      <id type="str">b5022ba6-a618-4421-8cc4-4e73f66ccafa</id>
+    </field><field>
       <type>string</type>
       <label type="str">Name</label>
       <required type="bool">True</required>
