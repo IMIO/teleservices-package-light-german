@@ -5,7 +5,7 @@
   <drafts_lifespan>2</drafts_lifespan>
   <discussion>false</discussion>
   <detailed_emails>true</detailed_emails>
-  <disabled>true</disabled>
+  <disabled>false</disabled>
   <only_allow_one>false</only_allow_one>
   <enable_tracking_codes>true</enable_tracking_codes>
   <confirmation>true</confirmation>
@@ -17,6 +17,10 @@
   <workflow slug="melden-sie-ein-problem-auf-der-website" workflow_id="58">Melden Sie ein Problem auf der Website</workflow>
   <fields>
     <field>
+      <type>page</type>
+      <label type="str">Einen Fehler auf der Website melden</label>
+      <id type="str">27d3e6a8-110f-4664-aa67-da051130147c</id>
+    </field><field>
       <type>title</type>
       <label type="str">Eine Bemerkung zur Website machen</label>
       <display_locations>
