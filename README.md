@@ -1,2 +1,3 @@
-# teleservices-package-light
-Light bundle of iA.Teleservices procedures
+# teleservices-package-light-german
+
+Light bundle of iA.Teleservices procedures (fork for german community).
