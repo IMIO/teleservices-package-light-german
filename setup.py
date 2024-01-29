@@ -10,10 +10,7 @@ from setuptools.command.install import install
 class inst(install):
     def run(self):
         install.run(self)
-        path = (
-            os.getcwd().replace(" ", r"\ ").replace("(", r"\(").replace(")", r"\)")
-            + "/bin/"
-        )
+        path = os.getcwd().replace(" ", r"\ ").replace("(", r"\(").replace(")", r"\)") + "/bin/"
         os.system("sh " + path + "install_teleservices_package_light_german.sh")
 
 
