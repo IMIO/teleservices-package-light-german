@@ -2,8 +2,8 @@
 <mail-template id="5" url="https://staging2-formulaires.guichet-citoyen.be/backoffice/workflows/mail-templates/5/">
   <name>Nutzer - Antrag bearbeitet</name>
   <slug>indus-nutzer-antrag-bearbeitet</slug>
-  <description>Usage - Demande trait&#233;e. Industrialis&#233;.  vos modifications seront perdues. Contactez iMio pour modifier ceci.
-Nutzer - Antrag bearbeitet. Industrialisiert. Ihre &#196;nderungen gehen verloren. Wenden Sie sich an iMio, um dies zu &#228;ndern.</description>
+  <documentation>Usage - Demande trait&#233;e. Industrialis&#233;.  vos modifications seront perdues. Contactez iMio pour modifier ceci.
+Nutzer - Antrag bearbeitet. Industrialisiert. Ihre &#196;nderungen gehen verloren. Wenden Sie sich an iMio, um dies zu &#228;ndern.</documentation>
   <subject>{{ form_name }} : Anfrage bearbeitet</subject>
   <body>Hallo {% if form_var_prenom %} {{ form_var_prenom }}{% endif %},
 
