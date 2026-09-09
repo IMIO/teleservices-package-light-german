@@ -248,17 +248,7 @@ Hiernach finden Sie die Einzelheiten der Anfrage:
       <name>In Bearbeitung</name>
       <colour>#66CCFF</colour>
       <visibility />
-      <items>
-        <item type="commentable" id="1">
-          <label>Kommentar</label>
-          <button_label>einen Kommentar hinzuf&#252;gen</button_label>
-          <by>
-            <item role_id="_receiver">_receiver</item>
-          </by><varname>reponse</varname>
-          <backoffice_info_text>&lt;p&gt;Zone d&amp;eacute;di&amp;eacute;e &amp;agrave; une r&amp;eacute;ponse &amp;agrave; donner au citoyen.&lt;/p&gt;
-</backoffice_info_text>
-          <required>False</required>
-        </item><item type="addattachment" id="2">
+      <items><item type="addattachment" id="2">
           <by>
             <item role_id="_receiver">_receiver</item>
           </by><required>False</required>
@@ -352,4 +342,48 @@ Hiernach finden Sie die Einzelheiten der Anfrage:
       </fields>
     </formdef>
   </backoffice-fields>
+  <global_actions>
+    <action>
+      <id>1</id>
+      <name>&#128172; Einen Kommentar hinzuf&#252;gen</name>
+      <backoffice_info_text>&lt;p&gt;Bereich f&amp;uuml;r eine Antwort an den B&amp;uuml;rger.&lt;/p&gt;
+</backoffice_info_text>
+      <items>
+        <item type="form" id="1">
+          <by>
+            <item role_id="_receiver">_receiver</item>
+          </by>
+          <varname>reponse</varname>
+          <hide_submit_button>False</hide_submit_button>
+          <include_in_form_history>True</include_in_form_history>
+          <formdef>
+            <name>-</name>
+            <fields>
+              <field>
+                <type>text</type>
+                <label type="str">Kommentar</label>
+                <required type="str">required</required>
+                <varname type="str">reponse</varname>
+                <display_locations />
+                <display_mode type="str">pre</display_mode>
+                <id type="str">baac490e-cfcf-457a-a8d1-6c523e3251a2</id>
+              </field>
+            </fields>
+          </formdef>
+        </item>
+      </items>
+      <triggers>
+        <trigger type="manual" id="fd243fa0-878f-482a-bcc2-1057c5235063">
+          <roles>
+            <item role_id="_receiver">_receiver</item>
+          </roles>
+          <statuses>
+            <statuse>accepted</statuse>
+          </statuses>
+          <allow_as_mass_action>False</allow_as_mass_action>
+          <require_confirmation>False</require_confirmation>
+        </trigger>
+      </triggers>
+    </action>
+  </global_actions>
 </workflow>
