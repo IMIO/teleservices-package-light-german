@@ -125,17 +125,7 @@ Als Referenz finden Sie hier die Einzelheiten der Anfrage:
       <colour>#FFFFFF</colour>
       <visibility />
       <items>
-        <item type="choice" id="1">
-          <label>Als beendet markieren</label>
-          <by>
-            <item role_id="_receiver">_receiver</item>
-          </by><status>finished</status>
-          <require_confirmation>True</require_confirmation>
-          <backoffice_info_text>&lt;p&gt;Wenn Sie auf diese Schaltfl&amp;auml;che klicken, wird der Antrag endg&amp;uuml;ltig geschlossen.&lt;/p&gt;
-</backoffice_info_text>
-          <ignore_form_errors>False</ignore_form_errors>
-          <set_marker_on_status>False</set_marker_on_status>
-        </item><item type="form" id="2">
+        <item type="form" id="2">
           <by>
             <item role_id="_receiver">_receiver</item>
           </by><varname>contact</varname>
@@ -155,6 +145,16 @@ Als Referenz finden Sie hier die Einzelheiten der Anfrage:
               </field>
             </fields>
           </formdef>
+        </item><item type="choice" id="1">
+          <label>Als beendet markieren</label>
+          <by>
+            <item role_id="_receiver">_receiver</item>
+          </by><status>finished</status>
+          <require_confirmation>True</require_confirmation>
+          <backoffice_info_text>&lt;p&gt;Wenn Sie auf diese Schaltfl&amp;auml;che klicken, wird der Antrag endg&amp;uuml;ltig geschlossen.&lt;/p&gt;
+</backoffice_info_text>
+          <ignore_form_errors>False</ignore_form_errors>
+          <set_marker_on_status>False</set_marker_on_status>
         </item>
       </items>
     </status>
